@@ -20,7 +20,9 @@ create_app(
     "ggprism",
     "officer",
     "svglite",
-    "esquisse"
+    "esquisse",
+    "rChoiceDialogs",
+    "shinyFiles"
   ),
   user_browser = "electron",
   app_desc       = "Create pretty current time curve plots",
