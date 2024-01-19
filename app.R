@@ -578,6 +578,16 @@ server <- function(input, output, session) {
       setwd(wddir)
     volumes <<- c(Workspace = getwd(), Home = fs::path_home(), "R Installation" = R.home(), getVolumes()())
   })
+  if (!interactive()) {
+    session$onSessionEnded(function() {
+      stopApp()
+      q("no")
+    })
+    
+  }
 }
+
+
+
 # Run the application
 shinyApp(ui = ui, server = server)
